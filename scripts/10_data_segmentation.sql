@@ -1,4 +1,4 @@
- */ Segment products into cost ranges and count how many products fall into each segment. */
+ /* Segment products into cost ranges and count how many products fall into each segment. */
 
 WITH product_segments AS (
 SELECT 
@@ -12,10 +12,10 @@ CASE WHEN cost < 100 THEN 'Below 100'
 END cost_range
 FROM gold.dim_products)
 SELECT
-cost_range,
-COUNT(product_key) AS total_products
-FROM product_segments
-GROUP BY cost_range ORDER BY total_products
+	cost_range,
+	COUNT(product_key) AS total_products
+	FROM product_segments
+	GROUP BY cost_range ORDER BY total_products
 
 /* Group customers into three segments based on their spending behavior:
 	-VIP: Customers with at least 12 months of history and are spending more than $5,000.
