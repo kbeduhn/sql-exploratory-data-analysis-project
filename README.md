@@ -5,10 +5,9 @@ Welcome to the **Data Analytics Project**! This repository generates actionable 
 ## Project Overview
 This project involves:
 1. **Data Modeling:** Developing fact and dimension tables optimized for analytical queries.
-2. **Analytics & Reporting:** Creating SQL-based reports and dashboards for actionable insights.
+2. **Analytics & Reporting:** Creating SQL-based queries and reports for actionable insights.
 
 This repository showcases expertise in:
-- Data Modeling
 - Data Analytics
 
 ## Project Requirements
