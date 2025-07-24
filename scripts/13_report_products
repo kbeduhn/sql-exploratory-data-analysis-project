@@ -21,7 +21,6 @@ Highlights:
 ============================================================================
 */
 CREATE VIEW gold.report_products AS
-
 WITH base_query AS (
 /*-------------------------------------------------------------------------- 
 1) Base Query: Retrieves core columns from the tables. 
@@ -42,7 +41,6 @@ LEFT JOIN gold.dim_products p
 ON f.product_key = p.product_key
 WHERE order_date IS NOT NULL -- only consider valid sales dates
 ),
-
 product_aggregations AS (
 /*-------------------------------------------------------------------------- 
 2) Product Aggregations: Summarizes key metrics at the product level.
@@ -90,17 +88,14 @@ SELECT
 	total_quantity,
 	total_customers,
 	avg_selling_price,
-
-	-- Average Order Revenue (AOR)
+-- Average Order Revenue (AOR)
 	CASE 
 		WHEN total_orders = 0 THEN 0
 		ELSE total_sales / total_orders
 	END AS avg_order_revenue,
-
-	-- Average Monthly Revenue
+-- Average Monthly Revenue
 	CASE
 		WHEN lifespan = 0 THEN total_sales
 		ELSE total_sales / lifespan
 	END AS avg_monthly_revenue
-
-	FROM product_aggregations
+FROM product_aggregations
