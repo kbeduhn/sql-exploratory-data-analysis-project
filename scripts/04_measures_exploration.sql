@@ -1,11 +1,11 @@
-* Data Exploration > Measures */
+/* Data Exploration > Measures */
 
--- Find the total sales X
+-- Find the total sales
 SELECT
 	SUM(sales_amount) AS total_sales
 FROM gold.fact_sales
 
--- Determine how many items are sold X
+-- Determine how many items are sold
 SELECT
 	COUNT(quantity) AS total_items_sold
 FROM gold.fact_sales
@@ -25,8 +25,6 @@ order_number
 FROM gold.fact_sales
 GROUP BY order_number
 HAVING COUNT(*) > 1
-
-SELECT * FROM gold.fact_sales WHERE order_number='SO55367'
 
 -- Find the total number of products
 SELECT 
