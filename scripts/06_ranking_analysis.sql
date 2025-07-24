@@ -1,4 +1,5 @@
 /* Which 5 products generate the highest revenue? */
+
 SELECT TOP 5 
 	p.product_name,
 SUM(f.sales_amount) total_revenue
